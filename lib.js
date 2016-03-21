@@ -1911,7 +1911,7 @@ function h$_hs_text_encode_utf8(destp_v, destp_o, src_v, srcoff, srclen) {
    Unicode 6.0.  */
 /* We do not support C11 <threads.h>.  */
 /** @constructor */
-function TryPs(editor, res, res_text, run_btn, run_output, run_templ, prelude) {
+function TryPs(editor, res, res_text, run_btn, run_output, run_templ) {
     this.fireBaseRef = new Firebase("https://lambda-pi-plus.firebaseio.com");
     this.userRef = null;
     this.fireBaseRef.authAnonymously( (function(error, authData) {
@@ -1929,8 +1929,8 @@ function TryPs(editor, res, res_text, run_btn, run_output, run_templ, prelude) {
     this.result_text = document.getElementById(res_text);
     this.run_output = document.getElementById(run_output);
     this.code = null;
-    this.prelude = document.getElementById(prelude).text;
-    this.compiledPrelude = '';
+    //this.prelude = document.getElementById(prelude).text;
+    //this.compiledPrelude = '';
     this.run_template = document.getElementById(run_templ).text.replace(/<!--([^]*)-->/gm, "$1");
     this.editor = CodeMirror['fromTextArea'](
         document.getElementById(editor), { 'lineNumbers': true
@@ -1964,9 +1964,9 @@ function TryPs(editor, res, res_text, run_btn, run_output, run_templ, prelude) {
         // addScript(that.compiledPrelude + that.code);
         // addScript("runPS();");
     });
-  this.getPrelude = function() {
-      return this.prelude;
-  }
+  //this.getPrelude = function() {
+  //    return this.prelude;
+  //}
   this.waitForChange = function(c) {
       if(this.changed) c(); else this.waiting.push(c);
   }
@@ -1999,9 +1999,9 @@ function TryPs(editor, res, res_text, run_btn, run_output, run_templ, prelude) {
         this.userRef.push(source);
       }
   }
-  this.setCompiledPrelude = function(x) {
-      this.compiledPrelude = x;
-  }
+  // this.setCompiledPrelude = function(x) {
+  //     this.compiledPrelude = x;
+  // }
   this.setResult = function(res) {
       this.result.className = "runnable";
       this.result_text.textContent = res;
@@ -2015,7 +2015,7 @@ function TryPs(editor, res, res_text, run_btn, run_output, run_templ, prelude) {
 var tryps;
 function trypsInit() {
     tryps = new TryPs( 'editor', 'result_outer', 'result_text', 'run_button'
-                      , 'run_output', 'run_template', 'purescript_prelude');
+                      , 'run_output', 'run_template');
 }
 /* Copyright (C) 1991-2015 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
