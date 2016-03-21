@@ -1,3 +1,8 @@
+---
+title: Prelude - LambdaPiPlus
+layout: page
+---
+
 ## Full Source
 
 The full source-code of the prelude is below:
