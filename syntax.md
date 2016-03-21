@@ -18,5 +18,7 @@ A statement is either of the form `let varname = ...` or `assume x :: ...`.
 All functions are defined using lambda syntax: `\`, the space-separated arguments, `->`, then the function body.
 
 ```haskell
+
 (\ x y -> x)
+
 ```
