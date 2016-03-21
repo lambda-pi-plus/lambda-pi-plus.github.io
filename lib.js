@@ -1976,7 +1976,7 @@ function TryPs(editor, res, res_text, run_btn, run_output, run_templ, prelude) {
   }
   this.clearError = function() {
       this.result.className = "error";
-      this.result_text.innerHTML = "";
+      this.result_text.textContent = "Error output:\n\n";
   }
   this.addError = function(err) {
       this.result.className = "error";
