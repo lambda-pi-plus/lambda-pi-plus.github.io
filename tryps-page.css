@@ -10,7 +10,7 @@ html {
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    overflow: scroll;
+    overflow: auto;
 }
 
 #content {
@@ -203,7 +203,7 @@ pre {
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
         height: auto;
-    /*max-height: 600px;*/
+    max-height: 600px;
     overflow: auto;
     background-color: #eeeeee;
     word-break: normal !important;
