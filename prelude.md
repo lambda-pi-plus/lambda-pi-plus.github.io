@@ -7,7 +7,7 @@ layout: page
 
 The full source-code of the prelude is below:
 
-```haskell
+~~~haskell
 
 -- identity and const
 let id    = (\ a x -> x) :: forall (a :: *) . a -> a
@@ -385,4 +385,4 @@ let sum =
   (\ s t -> exists (b :: Bool) . boolElim (\_ -> *) s t b )
   :: * -> * -> *
 
-```
+~~~
