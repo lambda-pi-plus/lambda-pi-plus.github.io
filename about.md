@@ -1,5 +1,6 @@
 ---
 title: About - LambdaPiPlus
+layout: page
 ---
 
 # LambdaPiPlus: Learn and Hack Dependent Types
