@@ -1,3 +1,8 @@
+---
+title: Syntax - LambdaPiPlus
+layout: page
+---
+
 # Syntax
 
 For an example of a syntactically valid file, see the [prelude](prelude)
