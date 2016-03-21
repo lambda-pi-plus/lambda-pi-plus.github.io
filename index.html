@@ -14,21 +14,31 @@
         <li><a class="active" href="#"><b>LambdaPiPlus  </b></a></li>
         <li></li>
         <li><a href="http://lambda-pi-plus.github.io">Try!</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="syntax">Syntax</a></li>
-        <li><a href="prelude">Prelude</a></li>
+        <li><a href="https://github.com/lambda-pi-plus/lambda-pi-plus/wiki/About">About</a></li>
+        <li><a href="https://github.com/lambda-pi-plus/lambda-pi-plus/wiki/syntax">Syntax</a></li>
+        <li><a href="https://github.com/lambda-pi-plus/lambda-pi-plus/wiki/prelude">Prelude</a></li>
       </ul>
     </div>
     <div id="content">
       <div id="source_outer">
         <div id="source">
           <textarea id="editor">
-module Main where
+--A proof that x >= y is a a natural z,
+--paired with a proof that z + y = x
+let geq =
+  (\ x y -> exists (z :: Nat) . Eq Nat x (plus y z) )
+  :: Nat -> Nat -> *
 
-import Control.Monad.Eff
-import Debug.Trace
+--Any Natural number is geq to 0
+let geq0 =
+  (\n -> (n , p0PlusNisN _) )
+  :: forall (n :: Nat ) . geq n 0
 
-main = trace "Hello, World!"
+--A proof that there is a number greater than any given natural number
+let natsAreInf =
+  (\n -> (Succ n, (0, symm _ (plus (Succ n) 0) (Succ n) (pNPlus0isN _)) ) )
+  :: forall (n :: Nat) . exists (m :: Nat) . gt m n
+
           </textarea>
         </div>
       </div>
