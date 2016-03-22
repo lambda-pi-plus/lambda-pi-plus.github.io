@@ -26,7 +26,7 @@
 --A proof that x >= y is a a natural z,
 --paired with a proof that z + y = x
 let geq =
-  (\ x y -> exists (z :: Nat) . Eq Nat x (plus y z) )
+  (\ x y -> exists (z :: Nat) . Eq _ x (plus y z) )
   :: Nat -> Nat -> *
 
 --Any Natural number is geq to 0
@@ -38,6 +38,7 @@ let geq0 =
 let natsAreInf =
   (\n -> (Succ n, (0, symm _ (plus (Succ n) 0) (Succ n) (pNPlus0isN _)) ) )
   :: forall (n :: Nat) . exists (m :: Nat) . gt m n
+
 
           </textarea>
         </div>
